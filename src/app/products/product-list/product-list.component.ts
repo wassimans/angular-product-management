@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit {
   showImage: boolean = false;
   listFilter: string;
   products: IProduct[];
+  errorMessage: string;
 
   constructor(private productService: ProductService) { }
 
@@ -22,7 +23,11 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.products = this.productService.getProducts();
+      let sub = this.productService.getProducts()
+                      .subscribe(
+                        products => this.products = products,
+                        error => this.errorMessage = <any>error 
+                      );
   }
 
   onNotify(message: string): void {
