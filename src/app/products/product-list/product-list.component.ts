@@ -3,7 +3,6 @@ import { IProduct } from '../product';
 import { ProductService } from '../product.service';
 
 @Component({
-  selector: 'pm-products',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
@@ -16,7 +15,7 @@ export class ProductListComponent implements OnInit {
   products: IProduct[];
   errorMessage: string;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
 
   toggleImage(): void {
     this.showImage = !this.showImage;
@@ -26,7 +25,7 @@ export class ProductListComponent implements OnInit {
       let sub = this.productService.getProducts()
                       .subscribe(
                         products => this.products = products,
-                        error => this.errorMessage = <any>error 
+                        error => this.errorMessage = <any>error
                       );
   }
 

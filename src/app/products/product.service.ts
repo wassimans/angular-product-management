@@ -9,7 +9,7 @@ import { IProduct } from './product';
 
 @Injectable()
 export class ProductService {
-    private productUrl = 'api/products/products.json';
+    private productUrl = 'https://raw.githubusercontent.com/DeborahK/Angular2-GettingStarted/master/APM%20-%20Final/api/products/products.json';
     constructor(private http: Http) {}
 
     getProducts(): Observable<IProduct[]> {
