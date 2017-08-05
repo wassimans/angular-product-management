@@ -15,7 +15,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id = +this.route.snapshot.params['id'];
+    const id = +this.route.snapshot.params['id'];
     this.pageTitle += `: ${id}`;
   }
 
